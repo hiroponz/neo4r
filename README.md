@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# Create class Inheriting Aneo::Node
+klass = Object.const_set("ClassName", Class.new(Aneo::Node))
+
+klass.count # => Get node count
+klass.all # => Get all nodes
+```
 
 ## Contributing
 
