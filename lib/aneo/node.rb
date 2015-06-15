@@ -1,3 +1,7 @@
+require "aneo/finder"
+require "aneo/property_container"
+require "aneo/node_relationship"
+
 module Aneo
   # Aneo Node class
   class Node < PropertyContainer

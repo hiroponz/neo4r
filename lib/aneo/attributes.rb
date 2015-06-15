@@ -1,3 +1,5 @@
+require "aneo/type_converters"
+
 module Aneo
   # Aneo node attributes module
   module Attributes
