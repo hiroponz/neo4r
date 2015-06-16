@@ -1,7 +1,7 @@
-require "aneo/type_converters"
+require "neo4z/type_converters"
 
-module Aneo
-  # Aneo node attributes module
+module Neo4z
+  # Neo4z node attributes module
   module Attributes
     extend ActiveSupport::Concern
 
@@ -59,7 +59,7 @@ module Aneo
 
       def handle_property_options_for(property, options)
         converter = options[:converter] ||
-          Aneo::TypeConverters
+          Neo4z::TypeConverters
           .converter(decl_props[property][:type])
         decl_props[property][:converter] = converter
       end

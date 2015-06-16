@@ -3,18 +3,18 @@ require "active_support"
 require "active_support/core_ext"
 require "neography"
 
-require "aneo/attributes"
-require "aneo/index_config_loader"
-require "aneo/node"
-require "aneo/node_traverser"
-require "aneo/paginated"
-require "aneo/relation"
-require "aneo/relationship"
-require "aneo/relationship_traverser"
-require "aneo/rest_wrapper"
-require "aneo/version"
-require "aneo/will_paginate"
+require "neo4z/attributes"
+require "neo4z/index_config_loader"
+require "neo4z/node"
+require "neo4z/node_traverser"
+require "neo4z/paginated"
+require "neo4z/relation"
+require "neo4z/relationship"
+require "neo4z/relationship_traverser"
+require "neo4z/rest_wrapper"
+require "neo4z/version"
+require "neo4z/will_paginate"
 
-module Aneo
+module Neo4z
   # Your code goes here...
 end

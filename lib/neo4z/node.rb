@@ -1,9 +1,9 @@
-require "aneo/finder"
-require "aneo/property_container"
-require "aneo/node_relationship"
+require "neo4z/finder"
+require "neo4z/property_container"
+require "neo4z/node_relationship"
 
-module Aneo
-  # Aneo Node class
+module Neo4z
+  # Neo4z Node class
   class Node < PropertyContainer
     extend Finder
     include ActiveModel::Conversion

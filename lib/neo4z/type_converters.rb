@@ -1,4 +1,4 @@
-module Aneo
+module Neo4z
 
   # Responsible for converting values from and to Java Neo4j and Lucene.
   # You can implement your own converter by implementing the method <tt>convert?</tt>, <tt>index_as</tt>
@@ -10,11 +10,11 @@ module Aneo
   # @example  writing your own marshalling converter:
   #
   #  class Foo
-  #     include Aneo::NodeMixin
+  #     include Neo4z::NodeMixin
   #     property :thing, type: MyType
   #  end
   #
-  #  module Aneo::TypeConverters
+  #  module Neo4z::TypeConverters
   #    class MyTypeConverter
   #      class << self
   #        def convert?(type)
@@ -284,10 +284,10 @@ module Aneo
       def converter(type = nil, enforce_type = true)
         return DefaultConverter unless type
         @converters ||= begin
-          Aneo::TypeConverters.constants.find_all do |c|
-            Aneo::TypeConverters.const_get(c).respond_to?(:convert?)
+          Neo4z::TypeConverters.constants.find_all do |c|
+            Neo4z::TypeConverters.const_get(c).respond_to?(:convert?)
           end.map do  |c|
-            Aneo::TypeConverters.const_get(c)
+            Neo4z::TypeConverters.const_get(c)
           end
         end
         found = @converters.find {|c| c.convert?(type) }
@@ -302,7 +302,7 @@ module Aneo
       end
 
       # Converts the given property (key, value) to Java if there is a type converter for given type.
-      # The type must also be declared using Aneo::NodeMixin#property property_name, type: clazz
+      # The type must also be declared using Neo4z::NodeMixin#property property_name, type: clazz
       # If no Converter is defined for this value then it simply returns the given value.
       def to_java(clazz, key, value)
         type = clazz._decl_props[key.to_sym] && clazz._decl_props[key.to_sym][:type]

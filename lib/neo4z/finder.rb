@@ -1,7 +1,7 @@
-require "aneo/relation"
+require "neo4z/relation"
 
-module Aneo
-  # Aneo Finder module
+module Neo4z
+  # Neo4z Finder module
   module Finder
     def find(neo_id)
       rest = RestWrapper.new

@@ -1,4 +1,4 @@
-module Aneo
+module Neo4z
   # The class provides the pagination based on the given source.
   # The source must be an Enumerable implementing methods drop,
   # first and count (or size).

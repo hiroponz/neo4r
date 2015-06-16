@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'aneo/version'
+require 'neo4z/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "aneo"
-  spec.version       = Aneo::VERSION
+  spec.name          = "neo4z"
+  spec.version       = Neo4z::VERSION
   spec.authors       = ["Hiroyuki Sato"]
   spec.email         = ["hiroyuki_sato@spiber.jp"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

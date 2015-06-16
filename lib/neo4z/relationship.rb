@@ -1,4 +1,4 @@
-module Aneo
+module Neo4z
   class Relationship < PropertyContainer
     def self.create(args)
       rel = Relationship.new(args)

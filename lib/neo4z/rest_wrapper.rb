@@ -1,4 +1,4 @@
-module Aneo
+module Neo4z
   # REST API proxy class
   class RestWrapper
     @@rest = Neography::Rest.new

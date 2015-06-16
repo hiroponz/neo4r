@@ -1,4 +1,4 @@
-module Aneo
+module Neo4z
   # Node traverser class
   class NodeTraverser
     include Enumerable

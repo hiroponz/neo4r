@@ -1,11 +1,11 @@
-require "aneo/will_paginate"
-require "aneo/rest_wrapper"
+require "neo4z/will_paginate"
+require "neo4z/rest_wrapper"
 
-module Aneo
-  # Aneo relation class
+module Neo4z
+  # Neo4z relation class
   class Relation
     include Enumerable
-    include ::Aneo::WillPaginate
+    include ::Neo4z::WillPaginate
 
     alias_method :all, :to_a
     alias_method :size, :count

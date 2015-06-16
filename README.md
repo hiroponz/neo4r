@@ -1,4 +1,4 @@
-# Aneo
+# Neo4z
 
 TODO: Write a gem description
 
@@ -7,7 +7,7 @@ TODO: Write a gem description
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'aneo'
+gem 'neo4z'
 ```
 
 And then execute:
@@ -16,13 +16,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install aneo
+    $ gem install neo4z
 
 ## Usage
 
 ```
-# Create class Inheriting Aneo::Node
-klass = Object.const_set("ClassName", Class.new(Aneo::Node))
+# Create class Inheriting Neo4z::Node
+klass = Object.const_set("ClassName", Class.new(Neo4z::Node))
 
 klass.count # => Get node count
 klass.all # => Get all nodes
@@ -30,7 +30,7 @@ klass.all # => Get all nodes
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/aneo/fork )
+1. Fork it ( https://github.com/[my-github-username]/neo4z/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

@@ -1,7 +1,7 @@
-require "aneo/node_traverser"
-require "aneo/relationship_traverser"
+require "neo4z/node_traverser"
+require "neo4z/relationship_traverser"
 
-module Aneo
+module Neo4z
   # Node relationship module
   module NodeRelationship
     DIRECTIONS = %W(incoming, in, outgoing, out, all, both)
