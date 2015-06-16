@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Neo4z::VERSION
   spec.authors       = ["Hiroyuki Sato"]
   spec.email         = ["hiroyuki_sato@spiber.jp"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A graph database for Ruby}
+  spec.description   = %q{A Neo4j OGM (Object-Graph-Mapper) for use in Ruby on Rails and Rack frameworks heavily inspired by ActiveRecord.}
+  spec.homepage      = "https://github.com/hiroponz/neo4z"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
