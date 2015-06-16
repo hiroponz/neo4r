@@ -1,11 +1,11 @@
-require "neo4z/will_paginate"
-require "neo4z/rest_wrapper"
+require "neo4r/will_paginate"
+require "neo4r/rest_wrapper"
 
-module Neo4z
-  # Neo4z relation class
+module Neo4r
+  # Neo4r relation class
   class Relation
     include Enumerable
-    include ::Neo4z::WillPaginate
+    include ::Neo4r::WillPaginate
 
     alias_method :all, :to_a
     alias_method :size, :count

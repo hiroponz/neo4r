@@ -1,9 +1,9 @@
-require "neo4z/finder"
-require "neo4z/property_container"
-require "neo4z/node_relationship"
+require "neo4r/finder"
+require "neo4r/property_container"
+require "neo4r/node_relationship"
 
-module Neo4z
-  # Neo4z Node class
+module Neo4r
+  # Neo4r Node class
   class Node < PropertyContainer
     extend Finder
     include ActiveModel::Conversion

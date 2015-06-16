@@ -1,6 +1,6 @@
-require "neo4z/relationship"
+require "neo4r/relationship"
 
-module Neo4z
+module Neo4r
   # Relationship traverser class
   class RelationshipTraverser
     include Enumerable

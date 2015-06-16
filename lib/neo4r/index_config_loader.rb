@@ -1,5 +1,5 @@
 # coding: utf-8
-module Neo4z
+module Neo4r
   module IndexConfigLoader
     #
     # Load index config from database.

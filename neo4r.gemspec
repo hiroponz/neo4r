@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'neo4z/version'
+require 'neo4r/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "neo4z"
-  spec.version       = Neo4z::VERSION
+  spec.name          = "neo4r"
+  spec.version       = Neo4r::VERSION
   spec.authors       = ["Hiroyuki Sato"]
   spec.email         = ["hiroyuki_sato@spiber.jp"]
   spec.summary       = %q{A graph database for Ruby}
   spec.description   = %q{A Neo4j OGM (Object-Graph-Mapper) for use in Ruby on Rails and Rack frameworks heavily inspired by ActiveRecord.}
-  spec.homepage      = "https://github.com/hiroponz/neo4z"
+  spec.homepage      = "https://github.com/hiroponz/neo4r"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

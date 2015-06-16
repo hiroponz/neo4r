@@ -1,7 +1,7 @@
-module Neo4z
+module Neo4r
   # Peoperty container class
   class PropertyContainer < OpenStruct
-    include Neo4z::Attributes
+    include Neo4r::Attributes
 
     attr_reader :neo_id, :rest
 

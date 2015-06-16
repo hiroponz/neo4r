@@ -1,7 +1,7 @@
-require "neo4z/type_converters"
+require "neo4r/type_converters"
 
-module Neo4z
-  # Neo4z node attributes module
+module Neo4r
+  # Neo4r node attributes module
   module Attributes
     extend ActiveSupport::Concern
 
@@ -59,7 +59,7 @@ module Neo4z
 
       def handle_property_options_for(property, options)
         converter = options[:converter] ||
-          Neo4z::TypeConverters
+          Neo4r::TypeConverters
           .converter(decl_props[property][:type])
         decl_props[property][:converter] = converter
       end
