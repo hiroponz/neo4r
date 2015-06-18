@@ -2,6 +2,17 @@
 
 Neo4r is an Active Model compliant Ruby wrapper for [the Neo4j graph database](http://neo4j.com/). It uses [the Neography](https://github.com/maxdemarzi/neography) gems.
 
+
+## Requirement
+
+- ruby ~> 2.1
+- neography ~> 1.6
+
+## Neo4j version support
+
+- 2.0.x
+- 2.1.x
+
 ## Installation
 
 Add this line to your application's Gemfile:
