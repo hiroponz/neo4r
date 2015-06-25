@@ -31,12 +31,94 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
-# Create class Inheriting Neo4r::Node
-klass = Object.const_set("ClassName", Class.new(Neo4r::Node))
+### Configuration
 
-klass.count # => Get node count
-klass.all # => Get all nodes
+Neo4r uses Neography to handle Neo4j REST API. So the configuration is same with Neography.
+Please see [the Neography document](https://github.com/maxdemarzi/neography/tree/v1.6.0#configuration-and-initialization).
+
+### Modeling
+
+A sample Node model.
+
+```ruby
+class User < Neo4r::Node
+end
+```
+
+Create a new node.
+
+```ruby
+user = User.new
+user.name = "Hiroyuki Sato"
+user.mail = "hiroyuki@example.com"
+user.age = 35
+user.save # => true
+```
+
+Search nodes.
+**The syntax of an exact match is only implemented.**
+
+```ruby
+users = User.where(name: "Hiroyuki Sato")
+puts users.first.name # => "Hiroyuki Sato"
+```
+
+Update nodes.
+
+```ruby
+user = User.where(name: "Hiroyuki Sato").first
+user.age = 36
+user.save # => true
+```
+
+Delete nodes.
+
+```ruby
+user = User.where(name: "Hiroyuki Sato").first
+user.destroy => true
+```
+
+Add connection.
+
+```ruby
+ozawa = User.new
+ozawa.name = "Kunio Ozawa"
+ozawa.save
+
+sato = User.new
+sato.name = "Hiroyuki Sato"
+sato.save
+
+nakamura = User.new
+nakamura.name = "Hiroyuki Nakamura"
+nakamura.save
+
+sugahara = User.new
+sugahara.name = "Junichi Sugahara"
+sugahara.save
+
+nakamura.incoming(:boss) << ozawa
+nakamura.incoming(:boss) << sato
+sugahara.incoming(:boss) << nakamura
+```
+
+Traverse connection.
+
+```ruby
+sugahara.incoming(:boss).each { |user| puts user.name }
+# output
+# => "Hiroyuki Nakamura"
+sugahara.incoming(:boss).depth(:all).each { |user| puts user.name }
+# output
+# => "Hiroyuki Nakamura"
+# => "Hiroyuki Sato"
+# => "Kunio Ozawa"
+```
+
+Delete connection.
+
+```ruby
+nakamura.rels(:boss).to_other(sato).destroy
 ```
 
 ## Contributing
