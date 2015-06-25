@@ -75,7 +75,7 @@ Delete nodes.
 
 ```ruby
 user = User.where(name: "Hiroyuki Sato").first
-user.delete => true
+user.destroy => true
 ```
 
 Add connection.
