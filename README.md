@@ -49,8 +49,8 @@ Create a new node.
 
 ```ruby
 user = User.new
-user.name = "Hiroyuki Sato"
-user.mail = "hiroyuki@example.com"
+user.name = "hiroponz"
+user.mail = "hiroponz@example.com"
 user.age = 35
 user.save # => true
 ```
@@ -59,14 +59,14 @@ Search nodes.
 **The syntax of an exact match is only implemented.**
 
 ```ruby
-users = User.where(name: "Hiroyuki Sato")
-puts users.first.name # => "Hiroyuki Sato"
+users = User.where(name: "hiroponz")
+puts users.first.name # => "hiroponz"
 ```
 
 Update nodes.
 
 ```ruby
-user = User.where(name: "Hiroyuki Sato").first
+user = User.where(name: "hiroponz").first
 user.age = 36
 user.save # => true
 ```
@@ -74,51 +74,51 @@ user.save # => true
 Delete nodes.
 
 ```ruby
-user = User.where(name: "Hiroyuki Sato").first
+user = User.where(name: "hiroponz").first
 user.destroy => true
 ```
 
 Add connection.
 
 ```ruby
-ozawa = User.new
-ozawa.name = "Kunio Ozawa"
-ozawa.save
+zakuni = User.new
+zakuni.name = "zakuni"
+zakuni.save
 
-sato = User.new
-sato.name = "Hiroyuki Sato"
-sato.save
+hiroponz = User.new
+hiroponz.name = "hiroponz"
+hiroponz.save
 
-nakamura = User.new
-nakamura.name = "Hiroyuki Nakamura"
-nakamura.save
+hryk = User.new
+hryk.name = "hryk"
+hryk.save
 
-sugahara = User.new
-sugahara.name = "Junichi Sugahara"
-sugahara.save
+suga = User.new
+suga.name = "suga"
+suga.save
 
-nakamura.incoming(:boss) << ozawa
-nakamura.incoming(:boss) << sato
-sugahara.incoming(:boss) << nakamura
+hryk.incoming(:boss) << zakuni
+hryk.incoming(:boss) << hiroponz
+suga.incoming(:boss) << hryk
 ```
 
 Traverse connection.
 
 ```ruby
-sugahara.incoming(:boss).each { |user| puts user.name }
+suga.incoming(:boss).each { |user| puts user.name }
 # output
-# => "Hiroyuki Nakamura"
-sugahara.incoming(:boss).depth(:all).each { |user| puts user.name }
+# => "hryk"
+suga.incoming(:boss).depth(:all).each { |user| puts user.name }
 # output
-# => "Hiroyuki Nakamura"
-# => "Hiroyuki Sato"
-# => "Kunio Ozawa"
+# => "hryk"
+# => "hiroponz"
+# => "zakuni"
 ```
 
 Delete connection.
 
 ```ruby
-nakamura.rels(:boss).to_other(sato).destroy
+hryk.rels(:boss).to_other(hiroponz).destroy
 ```
 
 ## Contributing
